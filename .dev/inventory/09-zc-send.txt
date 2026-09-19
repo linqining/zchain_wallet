@@ -1,0 +1,38 @@
+          09
+          转账 · 贪心选币
+                ZChain
+          zc-send
+                    转账
+                        GAME
+                        金额
+                        可用 12,400.00 ·
+                        MAX
+                        测试筹码 · 不计价
+                        500.00
+                        P
+                        PLAY
+                        收款 owner
+                        0x… / zc1q…
+                        贪心选币 · 消耗 2 张 note
+                        4f2a…c19d
+                        300.00
+                        proven
+                        91c7…e03a
+                        200.00
+                        proven
+                        找零 note
+                        0.00(本次无找零)
+                        网络费
+                        网关代付
+                        免费
+                        回执路径
+                        signed → seen → included
+                        pending
+                        soft
+                        proven
+                        finalized
+                        支出 note 短板
+                        proven
+                        · 满足 GAME 域要求
+                  确认转账
+                    提交后可在「证明 → 回执」跟踪 inclusion 状态

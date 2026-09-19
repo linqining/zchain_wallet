@@ -1,0 +1,67 @@
+/* ============================================================================
+   ZChain Wallet · 账簿 Ledger —— 应用外壳与主题(tokens.css)
+   ----------------------------------------------------------------------------
+   设计 token 同源 Pixso 设计文件(纸白账簿体系);本文件只放「应用外壳」:
+   桌面舞台(380×600 钱包窗口居中)、主题(纸白/夜场)切换、toast、滚动条等。
+   组件级样式在 base.css;屏幕级样式在 screens.css。
+   ============================================================================ */
+
+/* ---- 桌面舞台:钱包以 380×600 弹窗为基准居中呈现 ---- */
+:root{
+  --stage-bg:#dedad0;
+  --stage-grid:rgba(20,19,15,.055);
+  --stage-ink:#666256;
+}
+html[data-ground="night"]{
+  --stage-bg:#040806;
+  --stage-grid:rgba(240,247,241,.05);
+  --stage-ink:#7d9a8b;
+}
+html{color-scheme:light}
+html[data-ground="night"]{color-scheme:dark}
+body{
+  margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;
+  background:
+    repeating-linear-gradient(90deg,var(--stage-grid) 0 1px,transparent 1px 26px),
+    repeating-linear-gradient(180deg,var(--stage-grid) 0 1px,transparent 1px 26px),
+    var(--stage-bg);
+  font-family:var(--ui);transition:background .2s;
+}
+/* 舞台注记(不属于钱包 UI) */
+.stage-note{
+  position:fixed;left:50%;bottom:18px;transform:translateX(-50%);
+  font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--stage-ink);user-select:none;white-space:nowrap;
+}
+/* 钱包窗口本体 */
+#phone{
+  width:380px;height:600px;flex:none;position:relative;overflow:hidden;
+  border:1px solid rgba(20,19,15,.35);border-radius:10px;
+  box-shadow:0 24px 70px rgba(20,19,15,.28),0 2px 8px rgba(20,19,15,.18);
+  background:var(--pg);
+}
+html[data-ground="night"] #phone{border-color:rgba(240,247,241,.22)}
+@media (max-width:420px),(max-height:660px){
+  body{align-items:stretch;justify-content:stretch}
+  #phone{border-radius:0;border:none;box-shadow:none;width:100vw;height:100vh}
+  .stage-note{display:none}
+}
+
+/* ---- 主题切换按钮(顶栏太阳图标) ---- */
+.ib .ic-sun{width:14px;height:14px}
+
+/* ---- toast(应用级反馈;设计稿内 .tst 未随屏导出,这里按体系补齐) ---- */
+.tst{
+  position:absolute;left:50%;bottom:64px;transform:translateX(-50%) translateY(6px);
+  z-index:80;display:flex;align-items:center;gap:7px;max-width:86%;
+  background:var(--ink);color:var(--on-ink);border-radius:var(--r);
+  padding:8px 13px;font-size:11.5px;font-family:var(--mono);
+  opacity:0;pointer-events:none;transition:opacity .18s,transform .18s;
+  box-shadow:0 8px 24px rgba(20,19,15,.25);white-space:nowrap;
+}
+.tst.on{opacity:1;transform:translateX(-50%) translateY(0)}
+.tst .ic{width:13px;height:13px;color:var(--felt)}
+
+/* ---- 屏幕过渡(不做 scroll-driven 动画;仅切换时的轻微淡入) ---- */
+.scr-in{animation:scr-in .16s ease-out}
+@keyframes scr-in{from{opacity:.35}to{opacity:1}}

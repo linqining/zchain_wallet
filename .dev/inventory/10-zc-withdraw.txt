@@ -1,0 +1,45 @@
+          10
+          REAL 提现预览 · fail-closed
+                ZChain
+          zc-withdraw
+                    提现(预览)
+                        REAL
+                        托管警示
+                        REAL 域由运营方托管映射。以下为
+                        模拟预览
+                        ,不会提交任何链上交易。
+                        提现金额
+                        REAL 可用 10,000.00
+                        5,000.00
+                        N
+                        NATIVE
+                        收款 owner(L1 地址)
+                        0x…
+                        贪心选币 · 3 张 note
+                        77b1…04dd
+                        1,000.00
+                        proven
+                        c93e…5f10
+                        2,500.00
+                        proven
+                        a208…91ce
+                        1,500.00
+                        soft
+                        找零 note
+                        0.00(合计恰好 5,000.00)
+                        finality 检查
+                        ?
+                        pending
+                        soft
+                        proven
+                        finalized
+                        所需证明
+                        finalized
+                        最弱凭证
+                        soft(1 张 note 未达标)
+                        暂不可提交 · 原因
+                        提现通道未开放(v1 托管模式)
+                        1 张 note 的证明未达 finalized
+                        托管方签名服务待接入
+                  提交提现
+                    fail-closed:原因消除前,提交入口保持禁用(虚线即「不可用」的专用笔触)

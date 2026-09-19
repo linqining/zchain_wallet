@@ -1,0 +1,22 @@
+          01
+          欢迎 · 一次创建三层
+                引导
+          welcome
+                      DevNet
+                      ZChain Wallet
+                      桌上飞快,结算可证
+                      Fast at the table. Verifiable at settlement.
+                        3
+                        账户层
+                        2 套 KDF
+                        本地加密
+                        STARK
+                        可复验
+                        ZChain 隐私层
+                        EVM 多链
+                        Starknet
+                        一键创建钱包
+                        导入或恢复钱包
+                        一次创建三层账户:ZChain 隐私层 + EVM 多链 + Starknet
+                    设计稿 v0.2 · 对齐 Extension 0.6.1 · MV3 · 继续即代表知悉测试网风险
+                    Play / DevNet / v1.3

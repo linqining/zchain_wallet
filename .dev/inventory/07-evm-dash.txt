@@ -1,0 +1,61 @@
+          07
+          账簿 · EVM 层
+                账簿
+          evm-dash
+                      Ledger · Evm
+                        Ethereum · chainId 1
+                        A
+                        牌手一号
+                        0x5919…7527
+                        ZChain
+                        2
+                        EVM
+                        1
+                        Starknet
+                        1
+                        发送
+                        收款
+                        历史
+                        合约
+                        网络
+                        切换
+                        chainId
+                        1
+                        校验通过
+                        gas
+                        12 gwei
+                        偏低
+                        nonce
+                        42
+                        资产
+                        Ξ
+                        ETH
+                        原生币
+                        2.4183
+                        U
+                        USDC
+                        只读
+                        erc-20 · eth_call 读取
+                        320.00
+                        最新动态
+                        查看全部
+                        发送 · 0.25 ETH
+                        0x8f3a…c2 · 2 分钟前
+                        -0.2500
+                        成功
+                        接收 · 1.20 ETH
+                        0x51b7…c8 · 昨天
+                        +1.2000
+                        成功
+                        账户管理
+                        进入
+                        私钥 · 口令 · RPC
+                        危险区需二次确认
+                        总余额 · ETH
+                        2.418
+                        3
+                        ETH
+                        ≈ $8,124.69
+                      总账
+                      账簿
+                      证明
