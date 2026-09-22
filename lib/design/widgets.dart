@@ -1255,44 +1255,59 @@ class NoticeBanner extends StatelessWidget {
       bd = c.ambRl;
       tc = c.amb;
     }
+    // 非均匀色 Border 不能配 borderRadius(Border.paint 会抛断言):
+    // 用均匀 Border.all 画边框,左侧 3dp 强调条用独立色条实现(clipBehavior 裁圆角)。
+    // Row 的 stretch 需要有界交叉轴,故包一层 IntrinsicHeight(滚动容器内高度无界)。
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+      clipBehavior: Clip.antiAlias,
       decoration: BoxDecoration(
         color: bg,
-        border: Border(
-          left: BorderSide(color: accent, width: 3),
-          top: BorderSide(color: bd),
-          right: BorderSide(color: bd),
-          bottom: BorderSide(color: bd),
-        ),
+        border: Border.all(color: bd),
         borderRadius: BorderRadius.circular(ZcPalette.rS),
       ),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          ZcIcons.icon(icon, size: 18, color: accent),
-          const SizedBox(width: 9),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Text(
-                  title,
-                  style: ZcType.ui(
-                    context,
-                    size: 12,
-                    weight: FontWeight.w600,
-                    color: tc,
-                  ),
+      child: IntrinsicHeight(
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            Container(width: 3, color: accent),
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(9, 10, 12, 10),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    ZcIcons.icon(icon, size: 18, color: accent),
+                    const SizedBox(width: 9),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          Text(
+                            title,
+                            style: ZcType.ui(
+                              context,
+                              size: 12,
+                              weight: FontWeight.w600,
+                              color: tc,
+                            ),
+                          ),
+                          Text(
+                            text,
+                            style: ZcType.ui(
+                              context,
+                              size: 11.5,
+                              color: c.ink2,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
                 ),
-                Text(
-                  text,
-                  style: ZcType.ui(context, size: 11.5, color: c.ink2),
-                ),
-              ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
